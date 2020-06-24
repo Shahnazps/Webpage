@@ -2,7 +2,7 @@ var counter = 10;
 let btnstart = document.querySelector("#start");
 
 btnstart.addEventListener('click',() =>{
-	setInterval(function(){
+	t = setInterval(function(){
 		counter --;
 
 		if(counter >= 0){
@@ -11,6 +11,9 @@ btnstart.addEventListener('click',() =>{
 		}
 		if(counter == -1){
 			alert("Alert value reached 0")
+			clearInterval(t);
+			counter = 10
+			document.getElementById("count").innerHTML = counter;
 		}
 		
 	},1000)
@@ -20,7 +23,7 @@ btnstart.addEventListener('click',() =>{
 let btnreset = document.querySelector("#reset");
 
 btnreset.addEventListener('click',() =>{
-	counter = 5;
+	counter = 10;
 	id = document.getElementById("count")
 	id.innerHTML = counter;
 })
